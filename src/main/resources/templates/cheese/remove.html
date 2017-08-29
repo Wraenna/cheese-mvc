@@ -2,16 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
-<body>
+<body class="container body-content">
 <nav th:replace="fragments :: navigation"></nav>
-<h1 th:text="${title}"></h1>
+<h1 th:text="${title}"></h1>`
 <form method="post">
-    <label>I want to remove
-        <select name="removeCheese">
-            <option th:each="cheese : ${cheeses}" th:text="${cheese.key}">Test Value</option>
-        </select>
-         from my list of cheeses.
-    </label>
+
+    <div th:each="cheese : ${cheeses}" class="checkbox">
+        <input type="checkbox" name="cheeseIDs" th:value="${cheese.cheeseID}" th:id="${cheese.cheeseID}"/>
+        <label th:for="${cheese.cheeseID}" th:text="${cheese.cheeseName}"></label>
+        <br />
+    </div>
+
     <input type="submit" value="Remove Cheese" />
 </form>
 </body>

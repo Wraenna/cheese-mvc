@@ -2,13 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
-<body>
+<body class="container body-content">
 <nav th:replace="fragments :: navigation"></nav>
 <h1 th:text="${title}"></h1>
 
-<form method = "post">
-    <input type="text" name="cheeseName" />
-    <input type="text" name="cheeseDesc" />
+<form method = "post" style="max-width:600px;">
+    <div class="form-group">
+        <input class="form-control" type="text" name="cheeseName" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="cheeseDesc" />
+    </div>
     <input type="submit" value="Add Cheese" />
 </form>
 

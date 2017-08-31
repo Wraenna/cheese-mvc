@@ -25,6 +25,16 @@ public class CheeseData {
         cheeses.remove(cheeseToRemove);
     }
 
+    // edit
+
+    public static void edit(int id, String name, String desc, CheeseType type, int rating) {
+        Cheese cheeseToEdit = getByID(id);
+        cheeseToEdit.setCheeseName(name);
+        cheeseToEdit.setCheeseDesc(desc);
+        cheeseToEdit.setCheeseType(type);
+        cheeseToEdit.setCheeseRating(rating);
+    }
+
     // getByID
 
     public static Cheese getByID(int id) {
